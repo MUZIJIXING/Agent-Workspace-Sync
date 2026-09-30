@@ -1,0 +1,9 @@
+{
+  "name": "agent-workspace-sync",
+  "version": "0.1.0",
+  "description": "Safe workspace ownership, context handoff, and natural-language switching for Claude Code.",
+  "author": {
+    "name": "Agent Workspace Sync"
+  },
+  "license": "MIT"
+}

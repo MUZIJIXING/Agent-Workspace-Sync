@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "agent-workspace-sync": {
+      "command": "python",
+      "args": ["-m", "agent_workspace_sync.mcp_server"],
+      "cwd": "${CLAUDE_PROJECT_DIR}"
+    }
+  }
+}

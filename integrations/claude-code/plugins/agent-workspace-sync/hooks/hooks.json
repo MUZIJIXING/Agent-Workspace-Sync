@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m agent_workspace_sync.claude_hook session-start",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit|Bash|PowerShell|EnterWorktree|ExitWorktree|Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m agent_workspace_sync.claude_hook guard-pre-tool",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

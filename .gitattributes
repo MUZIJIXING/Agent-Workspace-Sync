@@ -1,0 +1,11 @@
+# Normalize to LF in the repository regardless of each machine's core.autocrlf
+* text=auto eol=lf
+
+# Binary assets
+*.db binary
+*.sqlite binary
+*.png binary
+*.jpg binary
+*.pptx binary
+*.xlsx binary
+*.pdf binary

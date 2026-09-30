@@ -1,0 +1,15 @@
+# Agent Workspace Sync adds one global ownership guard and one MCP server.
+- insert:
+    - id: agent-workspace-sync-dsh-adapter
+      name: '@agent-workspace-sync/dsh-adapter'
+
+    - id: agent-workspace-sync-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: agent-workspace-sync
+        transport: stdio
+        command: !!js process.env.AWSYNC_PYTHON
+        args: ['-m', 'agent_workspace_sync.mcp_server']
+        env:
+          PYTHONUTF8: '1'
+        failOnStartupError: true

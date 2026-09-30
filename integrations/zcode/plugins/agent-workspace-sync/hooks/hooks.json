@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "process",
+            "command": "python",
+            "args": ["-m", "agent_workspace_sync.zcode_hook", "session-start"],
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "process",
+            "command": "python",
+            "args": ["-m", "agent_workspace_sync.zcode_hook", "guard-write"],
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    ]
+  }
+}

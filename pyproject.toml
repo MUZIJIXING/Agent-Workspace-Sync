@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-workspace-sync"
+version = "0.1.0"
+description = "Local-first workspace state coordination for AI coding harnesses"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp>=2.1.1,<3"]
+
+[project.scripts]
+aws = "agent_workspace_sync.cli:main"
+agent-workspace-mcp = "agent_workspace_sync.mcp_server:main"
+agent-workspace-zcode-hook = "agent_workspace_sync.zcode_hook:main"
+
+[tool.setuptools]
+packages = ["agent_workspace_sync", "agent_workspace_sync._templates"]
+
+[tool.setuptools.package-dir]
+agent_workspace_sync = "src/agent_workspace_sync"
+"agent_workspace_sync._templates" = "integrations"
+
+[tool.setuptools.package-data]
+"agent_workspace_sync._templates" = [
+    "zcode/marketplace.json",
+    "zcode/plugins/agent-workspace-sync/.zcode-plugin/plugin.json",
+    "zcode/plugins/agent-workspace-sync/.mcp.json",
+    "zcode/plugins/agent-workspace-sync/hooks/hooks.json",
+    "zcode/plugins/agent-workspace-sync/skills/agent-workspace-sync/SKILL.md",
+    "dsh/bundles/agent-workspace-sync/package.json",
+    "dsh/bundles/agent-workspace-sync/cordis.patch.yml",
+    "dsh/bundles/agent-workspace-sync/lib/index.js",
+    "dsh/bundles/agent-workspace-sync/protocol.md",
+    "claude-code/plugins/agent-workspace-sync/.claude-plugin/plugin.json",
+    "claude-code/plugins/agent-workspace-sync/hooks/hooks.json",
+    "claude-code/plugins/agent-workspace-sync/skills/agent-workspace-sync/SKILL.md",
+]

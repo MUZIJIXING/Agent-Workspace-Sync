@@ -1,0 +1,29 @@
+{
+  "name": "@agent-workspace-sync/dsh-adapter",
+  "version": "0.1.0",
+  "description": "Agent Workspace Sync ownership guard and handoff protocol for DSH.",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "protocol.md"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "engines": {
+      "dsh": "0.1.1-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-mcp-client": "^0.1.1-rc.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-agent": "^0.1.1-rc.2",
+    "@deepseek-ai/dsh-tools": "^0.1.1-rc.2"
+  }
+}

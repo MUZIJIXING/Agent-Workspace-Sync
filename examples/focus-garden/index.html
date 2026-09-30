@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Garden — 今天的专注</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">🌱</span>
+      <span class="brand-name" id="brand-name">Focus Garden</span>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+      <span class="theme-toggle-label" id="theme-toggle-label">深色</span>
+    </button>
+  </header>
+
+  <main class="app" id="app">
+    <p class="tagline" id="tagline">把今天，留给重要的事。</p>
+
+    <form class="task-form" id="task-form" autocomplete="off">
+      <label class="field-label" for="task-input">添加任务</label>
+      <div class="task-form-row">
+        <input
+          type="text"
+          id="task-input"
+          name="task"
+          class="task-input"
+          placeholder="例如：读完一章书"
+          aria-describedby="task-input-hint">
+        <button type="submit" id="add-task" class="btn btn-primary">添加</button>
+      </div>
+      <p class="field-hint" id="task-input-hint">输入内容后按 Enter 或点击“添加”。</p>
+    </form>
+
+    <section class="toolbar" aria-label="任务筛选与统计">
+      <div class="filters" role="group" aria-label="筛选任务">
+        <button type="button" id="filter-all" class="filter-btn" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" id="filter-active" class="filter-btn" data-filter="active" aria-pressed="false">进行中</button>
+        <button type="button" id="filter-completed" class="filter-btn" data-filter="completed" aria-pressed="false">已完成</button>
+      </div>
+      <p class="stats" id="task-stats" aria-live="polite">共 3 项任务，1 项已完成，2 项进行中</p>
+    </section>
+
+    <section class="list-section" aria-labelledby="list-heading">
+      <h2 class="section-heading" id="list-heading">任务列表</h2>
+      <ul class="task-list" id="task-list">
+        <li class="task-item" data-id="1" data-completed="true">
+          <span class="task-check" aria-hidden="true">✓</span>
+          <span class="task-text" id="task-text-1">给绿萝浇水</span>
+          <span class="task-actions">
+            <button type="button" class="task-toggle" data-id="1" aria-label="取消完成：给绿萝浇水">取消完成</button>
+            <button type="button" class="task-delete" data-id="1" aria-label="删除任务：给绿萝浇水">删除</button>
+          </span>
+        </li>
+        <li class="task-item" data-id="2" data-completed="false">
+          <span class="task-check" aria-hidden="true"></span>
+          <span class="task-text" id="task-text-2">写 25 分钟专注笔记</span>
+          <span class="task-actions">
+            <button type="button" class="task-toggle" data-id="2" aria-label="标记完成：写 25 分钟专注笔记">完成</button>
+            <button type="button" class="task-delete" data-id="2" aria-label="删除任务：写 25 分钟专注笔记">删除</button>
+          </span>
+        </li>
+        <li class="task-item" data-id="3" data-completed="false">
+          <span class="task-check" aria-hidden="true"></span>
+          <span class="task-text" id="task-text-3">整理明天的三件事</span>
+          <span class="task-actions">
+            <button type="button" class="task-toggle" data-id="3" aria-label="标记完成：整理明天的三件事">完成</button>
+            <button type="button" class="task-delete" data-id="3" aria-label="删除任务：整理明天的三件事">删除</button>
+          </span>
+        </li>
+      </ul>
+
+      <div class="empty-state" id="empty-state" role="status" aria-live="polite" hidden>
+        <span class="empty-icon" aria-hidden="true">🌿</span>
+        <p class="empty-title" id="empty-title">这里还很安静</p>
+        <p class="empty-hint" id="empty-hint">添加一件小事，让花园开始生长。</p>
+      </div>
+    </section>
+
+    <p class="visually-hidden" id="action-status" role="status" aria-live="polite"></p>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-note" id="footer-note">专注一点，收获一片花园。</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

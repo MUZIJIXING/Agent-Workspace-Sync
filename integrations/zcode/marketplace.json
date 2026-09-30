@@ -1,0 +1,19 @@
+{
+  "name": "agent-workspace-sync",
+  "plugins": [
+    {
+      "name": "agent-workspace-sync",
+      "version": "0.1.2",
+      "description": "Safe workspace ownership, context handoff, and natural-language switching for ZCode.",
+      "source": "./plugins/agent-workspace-sync",
+      "author": {
+        "name": "Agent Workspace Sync"
+      },
+      "category": "developer-tools",
+      "displayName": "Agent Workspace Sync",
+      "displayName_i18n": {
+        "zh-CN": "Agent 工作区同步"
+      }
+    }
+  ]
+}
