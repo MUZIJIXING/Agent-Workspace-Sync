@@ -24,6 +24,9 @@ test-home/
 # Browser acceptance traces (publish only selected, reviewed screenshots)
 .playwright-mcp/
 
+# Local promotion materials
+tuiguang/
+
 # Editors and OS
 .vscode/
 .idea/
