@@ -147,4 +147,35 @@ dsh --patch .agent-workspace/clients/dsh/bundles/agent-workspace-sync/cordis.pat
 
 当前实机覆盖 Windows 的 Claude Code、DSH 和 ZCode CLI 接力。
 
+## 让 Harness 帮你配置
+
+在目标项目中打开 Harness，复制下面的 Prompt：
+
+```text
+请为当前项目配置 Agent Workspace Sync，让不同 AI 编程工具可以通过
+“交接一下”和“继续”轮流开发。
+
+仓库：https://github.com/MUZIJIXING/Agent-Workspace-Sync
+目标项目：当前项目根目录
+目标客户端：claude-code、dsh 或 zcode，优先识别当前客户端；
+项目路径或客户端不明确时，一次询问缺失信息。
+
+请直接完成以下配置：
+1. 读取仓库 README 和 CLI 帮助，检查 Python 3.10+ 及客户端环境。
+2. 在项目内创建或复用本工具的独立虚拟环境，安装该仓库的包及 mcp 依赖。
+3. 使用这个虚拟环境的 Python 执行 agent_workspace_sync.cli：
+   init <项目路径>
+   setup <项目路径> --client <目标客户端>
+   doctor <项目路径>
+4. 加载生成的客户端插件、MCP、交接指令和 guard，沿用已有模型配置。
+5. 通过只读操作核对 MCP 连接与工作区状态，检查 guard 已启用，
+   将工作区状态目录和本工具虚拟环境加入项目的 Git 忽略规则。
+
+所有安装和接入文件保存在当前项目内，保留已有配置、代码和开发占用，
+使用明确的解释器路径。需要更改全局设置时，先说明具体改动并征得我同意。
+
+如果加载配置需要重开会话或手动点击，请给出最短操作步骤或完整启动命令。
+完成后简要报告配置位置、检查结果和仍需我操作的步骤，再告诉我如何开始交接。
+```
+
 采用 [MIT License](LICENSE)。
