@@ -33,53 +33,51 @@ Claude Code、DSH 和 ZCode 依次制作 **Focus Garden** 中文任务板。
 
 ### 实际接手与交接
 
-点击截图可查看原图。
-
 **Claude Code：guard 检查开发占用。**
 
-[![Claude Code 在没有 active 所有者时被 guard 拦截](docs/assets/harness-claude-guard-annotated.png)](docs/assets/harness-claude-guard-annotated.png)
+![Claude Code 在没有 active 所有者时被 guard 拦截](docs/assets/harness-claude-guard-annotated.png)
 
 **Claude Code：保留下一阶段待办，等待交接。**
 
-[![Claude Code 保留工作区占用，并明确记录下一阶段的真实待办](docs/assets/harness-claude-pending-annotated.png)](docs/assets/harness-claude-pending-annotated.png)
+![Claude Code 保留工作区占用，并明确记录下一阶段的真实待办](docs/assets/harness-claude-pending-annotated.png)
 
 **Claude Code：保存上下文与待办，释放占用。**
 
-[![Claude Code 原生会话中交接完成，租约状态为 released](docs/assets/harness-claude-handoff-annotated.png)](docs/assets/harness-claude-handoff-annotated.png)
+![Claude Code 原生会话中交接完成，租约状态为 released](docs/assets/harness-claude-handoff-annotated.png)
 
 **Claude → DSH：只说“继续”，检查工作区、接手占用，再接着做页面交互。**
 
-<a href="docs/assets/harness-dsh-resume-annotated.png"><img src="docs/assets/harness-dsh-resume-focus.png" alt="DSH 收到继续后检查工作区、接手占用并延续真实待办" width="811"></a>
+![DSH 收到继续后检查工作区、接手占用并延续真实待办](docs/assets/harness-dsh-resume-annotated.png)
 
 **DSH → ZCode：通过“交接一下”保存交接并释放占用。**
 
-<a href="docs/assets/harness-dsh-handoff-annotated.png"><img src="docs/assets/harness-dsh-handoff-focus.png" alt="DSH 调用 workspace_leave 完成交接并释放工作区" width="811"></a>
+![DSH 调用 workspace_leave 完成交接并释放工作区](docs/assets/harness-dsh-handoff-annotated.png)
 
 **ZCode：收到“继续”，加载接入规则，通过 MCP 检查工作区。**
 
-<a href="docs/assets/harness-zcode-resume-annotated.png"><img src="docs/assets/harness-zcode-resume-focus.png" alt="ZCode 原生 App 中加载 agent-workspace-sync 并检查工作区状态" width="900"></a>
+![ZCode 原生 App 中加载 agent-workspace-sync 并检查工作区状态](docs/assets/harness-zcode-resume-annotated.png)
 
 **ZCode：确认占用，保存交接并释放。**
 
-<a href="docs/assets/harness-zcode-handoff-annotated.png"><img src="docs/assets/harness-zcode-handoff-focus.png" alt="ZCode 原生 App 中调用 workspace_leave 并报告交接完成" width="900"></a>
+![ZCode 原生 App 中调用 workspace_leave 并报告交接完成](docs/assets/harness-zcode-handoff-annotated.png)
 
 ### 网页成果
 
 **Claude：页面骨架。**
 
-<a href="docs/assets/web-relay-01-claude.png"><img src="docs/assets/web-relay-01-claude-focus.png" alt="Claude 完成页面骨架" width="700"></a>
+![Claude 完成页面骨架](docs/assets/web-relay-01-claude.png)
 
 **DSH：接上交互。** 第四条任务通过浏览器 Enter 添加。
 
-<a href="docs/assets/web-relay-02-dsh.png"><img src="docs/assets/web-relay-02-dsh-focus.png" alt="DSH 完成网页交互" width="700"></a>
+![DSH 完成网页交互](docs/assets/web-relay-02-dsh.png)
 
 **ZCode：补齐边界后的最终桌面页面。**
 
-<a href="docs/assets/web-relay-03-zcode-desktop.png"><img src="docs/assets/web-relay-03-zcode-desktop-focus.png" alt="三工具接力后的最终网页" width="700"></a>
+![三工具接力后的最终网页](docs/assets/web-relay-03-zcode-desktop.png)
 
 **390px 移动端实测。**
 
-<a href="docs/assets/web-relay-03-zcode-mobile.png"><img src="docs/assets/web-relay-03-zcode-mobile.png" alt="最终网页移动端布局" width="375"></a>
+<img src="docs/assets/web-relay-03-zcode-mobile.png" alt="最终网页移动端布局" width="390">
 
 ## 开始使用
 
